@@ -17,6 +17,7 @@ To enable testing, uncomment the line "#define RUN_TESTS" in DEFINITIONS.h.
 
 ## What Was Missed
 - Check on pricing rules to avoid duplicate SKU rules.
+- External file such as XML or JSON to store common pricing rules that can be modified and used without recompilation.
 
 ## Assumptions
 - Assuming SKUs cannot be composed of more than a single character, for example, "AB" would be invalid. If this is not the case, then switching the SKU data type from char to string would resolve this.
@@ -27,4 +28,4 @@ To enable testing, uncomment the line "#define RUN_TESTS" in DEFINITIONS.h.
 - typedef was used for variables such as currency and SKU, so they could easily be swapped out later for different data types in case they were not sufficient.
 - A struct was used for the pricing rules to allow more complex rules to be added. 
 - If an item with the same SKU but a different price is added, the new price is ignored. It is assumed to update the price in the current checkout session, all items of that class must be removed and the updated one added.
-- All the code files were put together, if the project was more complex they would be split into include and src folders. Along with the separation of external user-added libraries.
+- All the code files were put together due to it's simplicity, if the project was more complex they would be split into include and src folders. Along with the separation of external user-added libraries.
